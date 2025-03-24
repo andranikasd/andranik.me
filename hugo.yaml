@@ -73,11 +73,11 @@ params:
         - icon: fab fa-blog
           url: "https://docs.andranik.me/homelab"
         - icon: fab fa-github
-          url: "https://github.com/andranikgrigoryan"
+          url: "https://github.com/andranikasd"
         - icon: fab fa-linkedin-in
-          url: "https://linkedin.com/in/andranikgrigoryan"
+          url: "https://www.linkedin.com/in/andranik-grigoryan/"
         - icon: fas fa-briefcase
-          url: "https://www.upwork.com/freelancers/~yourupworkprofile"
+          url: "https://www.upwork.com/fl/~01400139683f3eb48c?mp_source=share"
 
   # About Section 👨‍💻
   about:
