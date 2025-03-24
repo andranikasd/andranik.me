@@ -1,0 +1,213 @@
+baseURL: "https://andranik.me"
+languageCode: "en-us"
+title: "Andranik Grigoryan | DevOps Expert"
+theme: hugo-profile
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+Paginate: 3
+enableRobotsTXT: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  title: "Andranik Grigoryan"
+  description: "Portfolio of Andranik Grigoryan, a seasoned DevOps expert building scalable cloud infrastructure."
+  useBootstrapCDN: false
+  favicon: "https://img.icons8.com/fluency/48/parse-from-clipboard.png"
+  mathjax: false
+  animate: true
+
+  theme:
+    # defaultTheme: "light" or "dark"
+
+  font:
+    fontSize: 1rem
+    fontWeight: 400
+    lineHeight: 1.5
+    textAlign: left
+
+  navbar:
+    align: ms-auto
+    brandName: "andranik.me"
+    disableSearch: true
+    stickyNavBar:
+      enable: true
+      showOnScrollUp: false
+    enableSeparator: false
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: true
+      disableProjects: true  # Projects menu disabled
+      disableAchievements: false
+      disableContact: false
+
+  # Hero Section 🚀
+  hero:
+    enable: true
+    intro: "Hi, my name is"
+    title: "Andranik Grigoryan"
+    subtitle: "I build scalable and reliable cloud infrastructures 🚀"
+    content: "I'm a seasoned DevOps expert passionate about leveraging cutting-edge technologies to optimize and automate cloud environments. This portfolio proudly runs on my self‑hosted Proxmox node 🖥️."
+    image: /images/me.png
+    bottomImage:
+      enable: true
+    roundImage: true
+    buttons:
+      - name: "Resume 📄"
+        url: "/cv"
+        download: true
+        newPage: false
+      - name: "Discover 🔍"
+        url: "/discover"
+        download: false
+        newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-blog
+          url: "https://docs.andranik.me/homelab"
+        - icon: fab fa-github
+          url: "https://github.com/andranikgrigoryan"
+        - icon: fab fa-linkedin-in
+          url: "https://linkedin.com/in/andranikgrigoryan"
+        - icon: fas fa-briefcase
+          url: "https://www.upwork.com/freelancers/~yourupworkprofile"
+
+  # About Section 👨‍💻
+  about:
+    enable: true
+    title: "About Me"
+    image: "/images/me.png"
+    content: |-
+      I am Andranik Grigoryan, a DevOps expert with extensive experience in building, automating, and managing cloud infrastructures. With a strong background in software development and a passion for innovation, I focus on creating scalable, secure, and efficient environments.
+      
+      My expertise spans container orchestration, Infrastructure as Code, CI/CD, and cloud-native technologies.
+    skills:
+      enable: true
+      title: "Technologies I work with:"
+      items:
+        - "Kubernetes"
+        - "Terraform"
+        - "Ansible"
+        - "AWS"
+        - "Azure"
+        - "Prometheus/Grafana"
+        - "Helm"
+        - "GitLab CI"
+
+  # Experience Section 💼
+  experience:
+    enable: true
+    items:
+      - job: "DevOps Engineer"
+        company: "StoneValley LLC"
+        date: "Mar 2020 - Oct 2022"
+        info:
+          enable: false
+        content: |
+          Built and optimized scalable AWS infrastructures, leveraging Terraform and containerized solutions. Implemented CI/CD pipelines and automated deployment processes to ensure high availability and efficiency.
+          
+          **Responsibilities:**
+          - Managed AWS services with robust automation.
+          - Developed Terraform configurations and CI/CD pipelines.
+          - Collaborated with cross-functional teams.
+          
+          **Achievements:**
+          - Reduced downtime and improved scalability.
+          - Streamlined deployment processes.
+      
+      - job: "DevOps Engineer"
+        company: "Goya CJSC"
+        date: "2018 - 2020"
+        info:
+          enable: false
+        content: |
+          Spearheaded cloud-based solutions for a global logistics leader. Focused on automating deployments and enhancing system monitoring with Kubernetes, Prometheus, and Grafana.
+          
+          **Responsibilities:**
+          - Developed and maintained CI/CD pipelines.
+          - Automated infrastructure provisioning and container orchestration.
+          - Improved system monitoring for uptime.
+          
+          **Achievements:**
+          - Accelerated deployment times.
+          - Increased system reliability.
+      
+      - job: "DevOps Engineer"
+        company: "PowerDMARC"
+        date: "2016 - 2018"
+        info:
+          enable: false
+        content: |
+          Led DevOps initiatives in a cybersecurity-focused environment. Optimized cloud infrastructures on AWS and Azure, ensuring performance and security.
+          
+          **Responsibilities:**
+          - Designed and implemented CI/CD pipelines.
+          - Managed cloud resources and security best practices.
+          - Deployed monitoring solutions.
+          
+          **Achievements:**
+          - Improved deployment efficiency.
+          - Reduced operational overhead.
+
+  # Achievements & Certifications 🏆
+  achievements:
+    enable: true
+    items:
+      - title: "AWS Solutions Architect Associate"
+        content: "Certified AWS Solutions Architect Associate"
+        url: "https://aws.amazon.com/certification/certified-solutions-architect-associate/"
+        image: "/achievment/SSA-03.png"
+      - title: "Certified Kubernetes Administrator"
+        content: "CKA Certified Kubernetes Administrator"
+        url: "https://www.cncf.io/certification/cka/"
+        image: "/achievment/CKA.png"
+
+  # Contact Section 📞
+  contact:
+    enable: true
+    content: "Let’s connect! Feel free to reach out to me on LinkedIn."
+    btnName: "My LinkedIn"
+    btnLink: "https://linkedin.com/in/andranikgrigoryan"
+
+  footer:
+    socialNetworks:
+      github: "https://github.com/andranikgrigoryan"
+      linkedin: "https://linkedin.com/in/andranikgrigoryan"
+      upwork: "https://www.upwork.com/freelancers/~yourupworkprofile"
+
+  # List & Single Pages
+  listPages:
+    disableFeaturedImage: false
+  singlePages:
+    socialShare: true
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+    tags:
+      openInNewTab: true
+
+  # Translations & Miscellaneous
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "All rights reserved"
+    pageNotFound: "Page not found"
+    emailText: "Check out this site"
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
