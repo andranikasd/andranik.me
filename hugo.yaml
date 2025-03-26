@@ -84,7 +84,7 @@ params:
     title: "About Me"
     image: "/other/me-final.png"
     content: |-
-      I am Andranik Grigoryan, a DevOps expert with 4+ years experience in building, automating, and managing cloud infrastructures. With a strong background in DevOps disciplines and a passion for innovation, I focus on creating scalable, secure, and efficient environments.
+      I am Andranik Grigoryan, a DevOps expert with 5+ years experience in building, automating, and managing cloud infrastructures. With a strong background in DevOps disciplines and a passion for innovation, I focus on creating scalable, secure, and efficient environments.
     skills:
       enable: true
       title: "Technologies I work with:"
@@ -106,9 +106,6 @@ params:
         color: "#4e8bbf"
         content: "A production-ready Kubernetes operator designed to deploy and manage High Availability Keycloak clusters using Helm. Supports fully declarative automation of realms, users, groups, clients, and SSO integration."
         image: "/images/projects/keycloak.png"
-        featured:
-          name: Demo
-          link: https://www.youtube.com/watch?v=N7rdhLASF5Y
         badges:
           - "Kubernetes Operator"
           - "Helm"
