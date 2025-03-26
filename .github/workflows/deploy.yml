@@ -27,9 +27,11 @@ jobs:
       - name: Calculate SemVer Version
         id: version
         run: |
-          chmod +x .github/scripts/version.sh
-          VERSION=$(.github/scripts/version.sh patch)
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
+            chmod +x .github/scripts/version.sh
+            VERSION=$(.github/scripts/version.sh patch)
+            echo "VERSION=$VERSION"
+            echo "version=${VERSION}" >> $GITHUB_ENV
+            echo "version=${VERSION}" >> $GITHUB_OUTPUT
 
       - name: Login to DockerHub
         uses: docker/login-action@v3
