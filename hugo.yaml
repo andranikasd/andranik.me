@@ -66,7 +66,7 @@ params:
     button:
       enable: true
       name: "Resume"
-      url: "other/cv.pdf"
+      url: "other/andranik-grigoryan-resume.pdf"
       download: true
       newPage: false
     socialLinks:
