@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - 'release/*'
+      - "release/*"
 
 env:
   IMAGE_NAME: andranikasd/hugo-portfolio
@@ -17,7 +17,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Important for git tag detection
+          fetch-depth: 0 # Important for git tag detection
 
       - name: Set up Git
         run: |
@@ -27,11 +27,11 @@ jobs:
       - name: Calculate SemVer Version
         id: version
         run: |
-            chmod +x .github/scripts/version.sh
-            VERSION=$(.github/scripts/version.sh patch)
-            echo "VERSION=$VERSION"
-            printf "version=%s\n" "$VERSION" >> "$GITHUB_OUTPUT"
-      
+          chmod +x .github/scripts/version.sh
+          VERSION=$(.github/scripts/version.sh patch)
+          echo "VERSION=$VERSION"
+          printf "version=%s\n" "$VERSION" >> "$GITHUB_OUTPUT"
+
       - name: Login to DockerHub
         uses: docker/login-action@v3
         with:
@@ -55,8 +55,9 @@ jobs:
       - name: Trigger Jenkins Deployment
         run: |
             CRUMB=$(curl -s --user "${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_API_TOKEN }}" \
-                "${{ secrets.JENKINS_URL }}/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,\":\",//crumb)")
+            "${{ secrets.JENKINS_URL }}/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,\":\",//crumb)")
+
             curl -X POST \
-                -H "$CRUMB" \
-                --user "${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_API_TOKEN }}" \
-                "${{ secrets.JENKINS_URL }}/job/deploy-portfolio/buildWithParameters?VERSION=${{ steps.version.outputs.version }}
+            -H "$CRUMB" \
+            --user "${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_API_TOKEN }}" \
+            "${{ secrets.JENKINS_URL }}/job/deploy-portfolio/buildWithParameters?VERSION=${{ steps.version.outputs.version }}"
