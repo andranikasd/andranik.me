@@ -1,0 +1,296 @@
+baseURL: "https://portfolio.andranik.me"
+languageCode: "en-us"
+title: "Andranik Grigoryan | DevOps Expert"
+theme: hugo-profile
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+Paginate: 3
+enableRobotsTXT: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  title: "Andranik Grigoryan"
+  description: "Portfolio of Andranik Grigoryan, a seasoned DevOps expert building scalable cloud infrastructure."
+  useBootstrapCDN: false
+  favicon: "https://img.icons8.com/fluency/48/parse-from-clipboard.png"
+  mathjax: false
+  animate: true
+
+  theme:
+    defaultTheme: dark
+
+  font:
+    fontSize: 1rem
+    fontWeight: 400
+    lineHeight: 1.5
+    textAlign: left
+
+  navbar:
+    align: ms-auto
+    brandName: "Andranik Grigoryan"
+    disableSearch: true
+    stickyNavBar:
+      enable: true
+      showOnScrollUp: false
+    enableSeparator: false
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: true
+      disableProjects: false
+      disableAchievements: false
+      disableContact: false
+
+  # Hero Section 🚀
+  hero:
+    enable: true
+    intro: "Hi, my name is"
+    title: "Andranik Grigoryan"
+    content: "I'm a seasoned DevOps expert passionate about leveraging cutting-edge technologies to optimize and automate cloud environments. This portfolio proudly runs on my self‑hosted Proxmox node 🖥️."
+    image: /other/me-final.png
+    bottomImage:
+      enable: false
+    roundImage: true
+    button:
+      enable: true
+      name: "Resume"
+      url: "other/cv.pdf"
+      download: true
+      newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: "https://github.com/andranikasd"
+        - icon: fab fa-linkedin-in
+          url: "https://www.linkedin.com/in/andranik-grigoryan/"
+        - icon: fas fa-briefcase
+          url: "https://www.upwork.com/fl/~01400139683f3eb48c?mp_source=share"
+
+  # About Section 👨‍💻
+  about:
+    enable: true
+    title: "About Me"
+    image: "/other/me-final.png"
+    content: |-
+      I am Andranik Grigoryan, a DevOps expert with 4+ years experience in building, automating, and managing cloud infrastructures. With a strong background in DevOps disciplines and a passion for innovation, I focus on creating scalable, secure, and efficient environments.
+    skills:
+      enable: true
+      title: "Technologies I work with:"
+      items:
+        - "Kubernetes"
+        - "AWS"
+        - "Ansible"
+        - "Terraform"
+        - "Prometheus/Grafana"
+        - "Helm/Kustomize/ArgoCD"
+        - "GitLab/GitHub"
+        - "More other"
+
+  # Projects Section 🛠️
+  projects:
+    enable: true
+    items:
+      - title: "Keycloak Integrated Operator"
+        color: "#4e8bbf"
+        content: "A production-ready Kubernetes operator designed to deploy and manage High Availability Keycloak clusters using Helm. Supports fully declarative automation of realms, users, groups, clients, and SSO integration."
+        image: "/images/projects/keycloak.png"
+        featured:
+          name: Demo
+          link: https://www.youtube.com/watch?v=N7rdhLASF5Y
+        badges:
+          - "Kubernetes Operator"
+          - "Helm"
+          - "CRDs"
+          - "SSO"
+          - "Keycloak"
+          - "GitOps"
+        links:
+          - icon: fab fa-github
+            url: "https://github.com/andranikasd/keycloak-integrated-operator-helm"
+
+      - title: "HomeLab"
+        color: "#44657c"
+        content: "A full-scale infrastructure-as-code Kubernetes deployment stack for Proxmox, featuring GitOps with ArgoCD, Git server via Gitaly, service mesh, observability stack (Grafana, Loki, Prometheus), and a dedicated Docker host with Jenkins and Portainer."
+        image: "/images/projects/homelab.png"
+        badges:
+          - "Terraform"
+          - "Proxmox"
+          - "Kubernetes"
+          - "GitOps"
+          - "ArgoCD"
+          - "Grafana"
+          - "Portainer"
+          - "CI/CD"
+          - "Longhorn"
+        links:
+          - icon: fab fa-github
+            url: "https://github.com/andranikasd/HomeLab"
+
+      - title: "UpScout"
+        color: "#6bd160"
+        content: "A Kubernetes-deployed Python Telegram bot that watches Upwork job feeds in real time and alerts a designated channel with relevant job postings based on user preferences and keywords."
+        image: "/images/projects/upscout.png"
+        badges:
+          - "Python"
+          - "Telegram Bot"
+          - "Upwork API"
+          - "Kubernetes"
+          - "AsyncIO"
+          - "DevOps Freelancing"
+        links:
+          - icon: fab fa-github
+            url: "https://github.com/andranikasd/UpScout"
+
+      - title: "Alpine ISO Builder"
+        color: "#111111"
+        content: "Automation toolkit to build custom Alpine Linux ISO images. Ideal for secure, air-gapped, or minimal infrastructure setups. Supports custom package sets, configuration injection, and CI-based image generation."
+        image: "/images/projects/alpine.png"
+        badges:
+          - "Alpine Linux"
+          - "Shell Scripting"
+          - "CI"
+          - "Air-gapped Infra"
+          - "ISO Customization"
+        links:
+          - icon: fab fa-github
+            url: "https://github.com/andranikasd/alpine-iso-builder"
+
+      - title: "Yuni Net"
+        color: "#22a699"
+        content: "A vendor-agnostic network automation platform supporting Cisco, MikroTik, Arista, and others. Automates configuration, compliance checks, and monitoring workflows with YAML-based templates and REST APIs."
+        image: "/images/projects/yuni.png"
+        badges:
+          - "Network Automation"
+          - "Cisco"
+          - "MikroTik"
+          - "Arista"
+          - "YAML Templates"
+          - "REST API"
+          - "Multi-Vendor"
+          - "CLI/NetConf"
+        links:
+          - icon: fab fa-github
+            url: "https://github.com/andranikasd/yuni-net"
+
+
+  # Experience Section 💼
+  experience:
+    enable: true
+    items:
+      - job: "DevOps Engineer"
+        company: "PowerDMARC"
+        date: "2024 - Present"
+        info:
+          enable: false
+        content: |
+          Spearheaded DevOps initiatives within a cybersecurity-centric organization, focusing on building resilient, secure, and scalable infrastructure across AWS and GCP.
+
+          **Responsibilities:**
+          - Managed and optimized multi-cloud infrastructure (AWS & GCP).
+          - Designed and implemented scalable infrastructure and CI/CD pipelines.
+          - Acted as the first line of defense in incident response and security operations.
+          - Ensured infrastructure met high standards of performance, availability, and security.
+
+          **Achievements:**
+          - Architected and deployed a high-performance DNS service capable of handling 150 million requests per day with sub-80ms latency.
+          - Successfully mitigated multiple DDoS and attack incidents, significantly strengthening the overall security posture.
+          - Reduced deployment times and operational overhead by automating key workflows and infrastructure components.
+
+      - job: "DevOps Engineering Team Lead"
+        company: "Goya CJSC"
+        date: "2022 - 2024"
+        info:
+          enable: false
+        content: |
+          Led high-impact DevOps initiatives that transformed our infrastructure and automated our deployment processes.
+
+          **Responsibilities:**
+          - Managed the project development lifecycle.
+          - Reviewed and designed component deployments.
+          - Interacted with management teams to understand needs and align technical solutions.
+
+          **Achievements:**
+          - Designed a robust zero-trust security system leveraging Hashicorp Vault, Keycloak, and Cilium’s pod-to-pod and node-to-node secure communication features.
+          - Designed and implemented reliable file storage systems using Longhorn, Minio, and CNCF database operator systems.
+          - Implemented an integrated Keycloak Helm chart for automated deployment of users, realms, and configurations.
+          - Developed Ansible playbooks for bare-metal node setup and Kubernetes HA deployment.
+          - Implemented air-gap deployment strategies using a custom Alpine ISO builder, self-hosted GitLab, ArgoCD, and related tools.
+
+      - job: "DevOps Engineer"
+        company: "StoneValley LLC"
+        date: "2019 - 2022"
+        info:
+          enable: false
+        content: |
+          Built and optimized a scalable AWS infrastructure, leveraging Terraform and containerized Jenkins on ECS. Ensured high availability, continuous automation, and effective collaboration with cross-functional teams to align proje needs with technical solutions.
+
+          **Responsibilities:**
+          - Monitored and maintained AWS infrastructure health, including ECS, EC2, and VPC, ensuring reliability and performance through proactive scaling and issue resolution.
+          - Continuously automated processes, extending Terraform configurations and refining CI/CD workfl Jenkins to reduce manual intervention
+          - Collaborated closely with development and operations teams, gathering requirements to design infrastructure solutions that aligned with stakeholder needs.
+
+          **Achievements:**
+          - Enhanced CI/CD reliability by migrating pipelines to Jenkins and optimizing resource usage on ECS, achieving a 30% increase in deployment efficiency
+          - Decreased incident response time by implementing proactive monitoring and alerting, ensuring rapid issue resolution and minimal downtime.
+
+  # Achievements & Certifications 🏆
+  achievements:
+    enable: true
+    items:
+      - title: "AWS Solutions Architect Associate"
+        content: "Certified AWS Solutions Architect Associate"
+        url: "https://www.credly.com/badges/b926e3b4-722d-4229-8f52-eb6c5114b8b8"
+        image: "/achievment/SSA-03.png"
+      - title: "Certified Kubernetes Administrator"
+        content: "CKA Certified Kubernetes Administrator"
+        url: "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/a350f71c-bf1a-4624-ae79-2e1436f51940-andranik-grigoryan-5ba02993-f0ad-4b65-be6e-fa6a6381cdbc-certificate.pdf"
+        image: "/achievment/CKA.png"
+
+  contact:
+    enable: true
+    content: "Let’s connect! Feel free to reach out to me on LinkedIn."
+    btnName: "My LinkedIn"
+    btnLink: "https://www.linkedin.com/in/andranik-grigoryan/"
+
+  footer:
+    socialNetworks:
+      github: "https://github.com/andranikasd"
+      linkedin: "https://www.linkedin.com/in/andranik-grigoryan/"
+      upwork: "https://www.upwork.com/fl/~01400139683f3eb48c?mp_source=share"
+
+  # List & Single Pages
+  listPages:
+    disableFeaturedImage: false
+  singlePages:
+    socialShare: true
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+    tags:
+      openInNewTab: true
+
+  # Translations & Miscellaneous
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "All rights reserved"
+    pageNotFound: "Page not found"
+    emailText: "Check out this site"
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
