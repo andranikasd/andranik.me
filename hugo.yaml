@@ -29,7 +29,7 @@ params:
   animate: true
 
   theme:
-    defaultTheme: dark
+    defaultTheme: light
 
   font:
     fontSize: 1rem
