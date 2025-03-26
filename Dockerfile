@@ -1,5 +1,5 @@
 # ------------ Stage 1: Build Hugo site ------------
-    FROM klakegg/hugo:0.122.0-ext-alpine AS builder
+    FROM klakegg/hugo:0.111.3-ext-ubuntu-onbuild AS builder
 
     # Set working directory
     WORKDIR /src
