@@ -59,7 +59,7 @@ params:
     intro: "Hi, my name is"
     title: "Andranik Grigoryan"
     content: "I'm a seasoned DevOps expert passionate about leveraging cutting-edge technologies to optimize and automate cloud environments. This portfolio proudly runs on my self‑hosted Proxmox node 🖥️."
-    image: /images/me.png
+    image: /other/me.png
     bottomImage:
       enable: true
     roundImage: true
@@ -82,7 +82,7 @@ params:
   about:
     enable: true
     title: "About Me"
-    image: "/images/me.png"
+    image: "/other/me.png"
     content: |-
       I am Andranik Grigoryan, a DevOps expert with 4+ years experience in building, automating, and managing cloud infrastructures. With a strong background in DevOps disciplines and a passion for innovation, I focus on creating scalable, secure, and efficient environments.
 
