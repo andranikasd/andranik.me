@@ -64,14 +64,13 @@ params:
       enable: true
     roundImage: true
     button:
-      name: "Resume 📄"
+      enable: true
+      name: "Resume"
       url: "/cv"
       download: true
       newPage: false
     socialLinks:
       fontAwesomeIcons:
-        - icon: fab fa-blog
-          url: "https://docs.andranik.me/homelab"
         - icon: fab fa-github
           url: "https://github.com/andranikasd"
         - icon: fab fa-linkedin-in
@@ -101,6 +100,93 @@ params:
         - "GitLab/GitHub"
         - "More other"
 
+  # Projects Section 🛠️
+  projects:
+    enable: true
+    items:
+      - title: "Keycloak Integrated Operator"
+        color: "#4e8bbf"
+        content: "A production-ready Kubernetes operator designed to deploy and manage High Availability Keycloak clusters using Helm. Supports fully declarative automation of realms, users, groups, clients, and SSO integration."
+        image: "/images/projects/keycloak.png"
+        featured:
+          name: Demo
+          link: https://www.youtube.com/watch?v=N7rdhLASF5Y
+        badges:
+          - "Kubernetes Operator"
+          - "Helm"
+          - "CRDs"
+          - "SSO"
+          - "Keycloak"
+          - "GitOps"
+        links:
+          - icon: fab fa-github
+            url: "https://github.com/andranikasd/keycloak-integrated-operator-helm"
+
+      - title: "HomeLab"
+        color: "#44657c"
+        content: "A full-scale infrastructure-as-code Kubernetes deployment stack for Proxmox, featuring GitOps with ArgoCD, Git server via Gitaly, service mesh, observability stack (Grafana, Loki, Prometheus), and a dedicated Docker host with Jenkins and Portainer."
+        image: "/images/projects/homelab.png"
+        badges:
+          - "Terraform"
+          - "Proxmox"
+          - "Kubernetes"
+          - "GitOps"
+          - "ArgoCD"
+          - "Grafana"
+          - "Portainer"
+          - "CI/CD"
+          - "Longhorn"
+        links:
+          - icon: fab fa-github
+            url: "https://github.com/andranikasd/HomeLab"
+
+      - title: "UpScout"
+        color: "#6bd160"
+        content: "A Kubernetes-deployed Python Telegram bot that watches Upwork job feeds in real time and alerts a designated channel with relevant job postings based on user preferences and keywords."
+        image: "/images/projects/upscout.png"
+        badges:
+          - "Python"
+          - "Telegram Bot"
+          - "Upwork API"
+          - "Kubernetes"
+          - "AsyncIO"
+          - "DevOps Freelancing"
+        links:
+          - icon: fab fa-github
+            url: "https://github.com/andranikasd/UpScout"
+
+      - title: "Alpine ISO Builder"
+        color: "#111111"
+        content: "Automation toolkit to build custom Alpine Linux ISO images. Ideal for secure, air-gapped, or minimal infrastructure setups. Supports custom package sets, configuration injection, and CI-based image generation."
+        image: "/images/projects/alpine.png"
+        badges:
+          - "Alpine Linux"
+          - "Shell Scripting"
+          - "CI"
+          - "Air-gapped Infra"
+          - "ISO Customization"
+        links:
+          - icon: fab fa-github
+            url: "https://github.com/andranikasd/alpine-iso-builder"
+
+      - title: "Yuni Net"
+        color: "#22a699"
+        content: "A vendor-agnostic network automation platform supporting Cisco, MikroTik, Arista, and others. Automates configuration, compliance checks, and monitoring workflows with YAML-based templates and REST APIs."
+        image: "/images/projects/yuni.png"
+        badges:
+          - "Network Automation"
+          - "Cisco"
+          - "MikroTik"
+          - "Arista"
+          - "YAML Templates"
+          - "REST API"
+          - "Multi-Vendor"
+          - "CLI/NetConf"
+        links:
+          - icon: fab fa-github
+            url: "https://github.com/andranikasd/yuni-net"
+
+
   # Experience Section 💼
   experience:
     enable: true
@@ -111,16 +197,18 @@ params:
         info:
           enable: false
         content: |
-          Led DevOps initiatives in a cybersecurity-focused environment. Optimized cloud infrastructures on AWS and Azure, ensuring performance and security.
+          Spearheaded DevOps initiatives within a cybersecurity-centric organization, focusing on building resilient, secure, and scalable infrastructure across AWS and GCP.
 
           **Responsibilities:**
-          - Designed and implemented CI/CD pipelines.
-          - Managed cloud resources and security best practices.
-          - Deployed monitoring solutions.
+          - Managed and optimized multi-cloud infrastructure (AWS & GCP).
+          - Designed and implemented scalable infrastructure and CI/CD pipelines.
+          - Acted as the first line of defense in incident response and security operations.
+          - Ensured infrastructure met high standards of performance, availability, and security.
 
           **Achievements:**
-          - Improved deployment efficiency.
-          - Reduced operational overhead.
+          - Architected and deployed a high-performance DNS service capable of handling 150 million requests per day with sub-80ms latency.
+          - Successfully mitigated multiple DDoS and attack incidents, significantly strengthening the overall security posture.
+          - Reduced deployment times and operational overhead by automating key workflows and infrastructure components.
 
       - job: "DevOps Engineering Team Lead"
         company: "Goya CJSC"
