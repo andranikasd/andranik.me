@@ -4,11 +4,7 @@ on:
   push:
     branches:
       - master
-<<<<<<< HEAD
-      - 'release/*'
-=======
       - "release/*"
->>>>>>> release/v0.0.1
 
 env:
   IMAGE_NAME: andranikasd/hugo-portfolio
@@ -21,12 +17,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-<<<<<<< HEAD
-          fetch-depth: 0  # Important for git tag detection
-=======
           fetch-depth: 0 # Important for git tag detection
->>>>>>> release/v0.0.1
-
       - name: Set up Git
         run: |
           git config user.name "GitHub Actions"
@@ -35,18 +26,10 @@ jobs:
       - name: Calculate SemVer Version
         id: version
         run: |
-<<<<<<< HEAD
-            chmod +x .github/scripts/version.sh
-            VERSION=$(.github/scripts/version.sh patch)
-            echo "VERSION=$VERSION"
-            echo "version=${VERSION}" >> $GITHUB_ENV
-            echo "version=${VERSION}" >> $GITHUB_OUTPUT
-=======
           chmod +x .github/scripts/version.sh
           VERSION=$(.github/scripts/version.sh patch)
           echo "VERSION=$VERSION"
           printf "version=%s\n" "$VERSION" >> "$GITHUB_OUTPUT"
->>>>>>> release/v0.0.1
 
       - name: Login to DockerHub
         uses: docker/login-action@v3
@@ -67,12 +50,6 @@ jobs:
         run: |
           git tag ${{ steps.version.outputs.version }}
           git push origin ${{ steps.version.outputs.version }}
-
-<<<<<<< HEAD
-      - name: Trigger Jenkins
-        run: |
-          curl -X POST "${{ secrets.JENKINS_URL }}/job/deploy-portfolio/buildWithParameters?token=${{ secrets.JENKINS_TOKEN }}&VERSION=${{ steps.version.outputs.version }}"
-=======
       - name: Trigger Jenkins Deployment
         run: |
             CRUMB=$(curl -s --user "${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_API_TOKEN }}" \
@@ -82,4 +59,3 @@ jobs:
             -H "$CRUMB" \
             --user "${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_API_TOKEN }}" \
             "${{ secrets.JENKINS_URL }}/job/deploy-portfolio/buildWithParameters?VERSION=${{ steps.version.outputs.version }}"
->>>>>>> release/v0.0.1
