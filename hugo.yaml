@@ -25,7 +25,7 @@ params:
   description: "Portfolio of Andranik Grigoryan, a seasoned DevOps expert building scalable cloud infrastructure."
   useBootstrapCDN: false
   favicon: "https://img.icons8.com/fluency/48/parse-from-clipboard.png"
-  mathjax: true
+  mathjax: false
   animate: true
 
   theme:
@@ -59,14 +59,14 @@ params:
     intro: "Hi, my name is"
     title: "Andranik Grigoryan"
     content: "I'm a seasoned DevOps expert passionate about leveraging cutting-edge technologies to optimize and automate cloud environments. This portfolio proudly runs on my self‑hosted Proxmox node 🖥️."
-    image: /other/me.png
+    image: /other/me-final.png
     bottomImage:
-      enable: true
+      enable: false
     roundImage: true
     button:
       enable: true
       name: "Resume"
-      url: "/cv"
+      url: "other/cv.pdf"
       download: true
       newPage: false
     socialLinks:
@@ -82,11 +82,9 @@ params:
   about:
     enable: true
     title: "About Me"
-    image: "/other/me.png"
+    image: "/other/me-final.png"
     content: |-
       I am Andranik Grigoryan, a DevOps expert with 4+ years experience in building, automating, and managing cloud infrastructures. With a strong background in DevOps disciplines and a passion for innovation, I focus on creating scalable, secure, and efficient environments.
-
-      My expertise spans container orchestration, Infrastructure as Code, CI/CD, and cloud-native technologies.
     skills:
       enable: true
       title: "Technologies I work with:"
