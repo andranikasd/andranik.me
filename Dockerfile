@@ -1,27 +1,20 @@
-# ------------ Stage 1: Build Hugo site ------------
-    FROM klakegg/hugo:0.111.3-ext-ubuntu-onbuild AS builder
+# ------------ Stage 1: Hugo build ------------
+FROM alpine:3.21.3 AS builder
 
-    # Set working directory
-    WORKDIR /src
-    
-    # Copy everything except what's in .dockerignore
-    COPY . .
-    
-    # Build the site
-    RUN hugo --minify
-    
-    # ------------ Stage 2: Serve with Nginx ------------
-    FROM nginx:alpine
-    
-    # Clean default Nginx config
-    RUN rm -rf /usr/share/nginx/html/*
-    
-    # Copy Hugo build output from builder stage
-    COPY --from=builder /src/public /usr/share/nginx/html
-    
-    # Expose port
-    EXPOSE 80
-    
-    # Start nginx
-    CMD ["nginx", "-g", "daemon off;"]
-    
+RUN apk add --no-cache \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
+    hugo
+
+WORKDIR /src
+COPY . .
+
+RUN hugo --environment production --destination /public
+
+
+# ------------ Final Stage: BusyBox (no scratch) ------------
+FROM busybox:uclibc
+
+COPY --from=builder /public /www
+
+ENTRYPOINT ["httpd", "-f", "-p", "80", "-h", "/www"]
+EXPOSE 80
