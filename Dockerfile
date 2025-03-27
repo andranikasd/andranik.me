@@ -31,6 +31,8 @@ RUN chown -R nginx:nginx /usr/share/nginx/html /var/cache/nginx /var/run/nginx &
     chmod -R 755 /usr/share/nginx/html && \
     chmod -R a-w /usr/share/nginx/html
 
+RUN apk del curl libcurl
+
 USER nginx
 
 EXPOSE 80
