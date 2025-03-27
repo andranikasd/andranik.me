@@ -3,7 +3,8 @@
 ###############################################
 FROM alpine:3.21.3 AS builder
 
-RUN apk add --no-cache \
+RUN apk update && apk upgrade && \
+    apk add --no-cache \
     --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
     hugo
 
