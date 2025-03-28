@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Andranik Grigoryan | DevOps Expert</title>
-    <link>http://localhost:1313/</link>
+    <link>https://portfolio.andranik.me/</link>
     <description>Recent content on Andranik Grigoryan | DevOps Expert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://portfolio.andranik.me/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Discover My Infrastructure</title>
-      <link>http://localhost:1313/discover/</link>
+      <link>https://portfolio.andranik.me/discover/</link>
       <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/discover/</guid>
+      <guid>https://portfolio.andranik.me/discover/</guid>
       <description>Welcome to My Homelab 🖥️ This page showcases the infrastructure powering my portfolio, running on a self-hosted Proxmox node.&#xA;Key Components:&#xA;Proxmox Node: The heart of my homelab, hosting multiple virtual machines. Virtual Machines: Running containerized applications and services. Networking Equipment: Ensuring seamless connectivity and security. Storage &amp;amp; Backup: Optimized for performance and reliability. Explore the details to see how I leverage cutting-edge tools to build scalable and robust environments.</description>
     </item>
   </channel>

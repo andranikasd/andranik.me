@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Discover My Infrastructure on Andranik Grigoryan | DevOps Expert</title>
-    <link>http://localhost:1313/discover/</link>
+    <link>https://portfolio.andranik.me/discover/</link>
     <description>Recent content in Discover My Infrastructure on Andranik Grigoryan | DevOps Expert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/discover/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://portfolio.andranik.me/discover/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
