@@ -1,5 +1,5 @@
 # Stage 1
-FROM alpine:latest AS build
+FROM alpine:3.21.3 AS build
 
 # Install the Hugo go app.
 RUN apk add --update hugo
@@ -13,7 +13,7 @@ COPY . .
 RUN hugo
 
 # Stage 2
-FROM nginx:1.25-alpine
+FROM nginx:stable-alpine3.20
 
 # Set workdir to the NGINX default dir.
 WORKDIR /usr/share/nginx/html
