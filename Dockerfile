@@ -1,7 +1,7 @@
 ############################################################
 #                Stage 1: Hugo Static Site Build           #
 ############################################################
-FROM alpine:3.21.3 AS build
+FROM alpine:3.21.3 AS builder
 
 # Install Hugo from Alpine edge community repo
 RUN apk add --no-cache \
