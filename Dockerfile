@@ -38,7 +38,7 @@ RUN apk update && apk upgrade --no-cache \
 
 # Set working directory to NGINX's default web root
 WORKDIR /usr/share/nginx/html
-
+RUN rm -rf /usr/share/nginx/html/*
 # Copy built static site from previous stage
 COPY --from=build /opt/HugoApp/public .
 
