@@ -10,6 +10,8 @@ WORKDIR /src
 
 COPY . .
 
+
+CMD ["/bin/sh", "-c", "top"]
 # # Build Hugo site
 # RUN hugo --destination /src/public
 # ############################################################
