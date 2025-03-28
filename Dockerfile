@@ -45,6 +45,4 @@ COPY --from=build /opt/HugoApp/public .
 # Expose HTTP port
 EXPOSE 80
 
-# Add simple healthcheck to ensure NGINX is serving content
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD wget --spider -q http://localhost || exit 1
+HEALTHCHECK CMD curl -f http://localhost:80 || exit 1
