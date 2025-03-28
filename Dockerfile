@@ -11,7 +11,7 @@ WORKDIR /src
 COPY . .
 
 # Build Hugo site
-RUN hugo --destination ./public --minify
+RUN hugo --destination /src/public
 ############################################################
 #            Stage 2: Secure and Patched NGINX Runtime     #
 ############################################################
@@ -24,10 +24,12 @@ RUN apk update && apk upgrade --no-cache \
     libxslt && \
     rm -rf /var/cache/apk/*
 
+COPY --from=builder /src /root
+
 RUN rm -f /usr/share/nginx/html/*
 
 # Copy Hugo build output from builder stage
-COPY --from=builder /src/public/ /usr/share/nginx/html
+COPY --from=builder /src/public/* /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port
