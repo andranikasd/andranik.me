@@ -24,6 +24,8 @@ RUN apk update && apk upgrade --no-cache \
     libxslt && \
     rm -rf /var/cache/apk/*
 
+RUN rm -f /usr/share/nginx/html
+
 # Copy Hugo build output from builder stage
 COPY --from=builder /src/public/ /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
