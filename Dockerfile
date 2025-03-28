@@ -29,9 +29,12 @@ FROM nginx:stable-alpine3.20
 # - We do NOT switch the base image
 # - Only upgrade packages with known issues (minimal risk)
 RUN apk update && apk upgrade --no-cache \
-    libexpat \        # CVE-2024-8176
-    libxml2 \         # CVE-2024-56171, CVE-2025-24928, CVE-2025-27113
-    libxslt           # CVE-2024-55549, CVE-2025-24855
+    # CVE-2024-8176
+    libexpat \
+    # CVE-2024-56171, CVE-2025-24928, CVE-2025-27113
+    libxml2 \
+    # CVE-2024-55549, CVE-2025-24855
+    libxslt
 
 # Set working directory to NGINX's default web root
 WORKDIR /usr/share/nginx/html
