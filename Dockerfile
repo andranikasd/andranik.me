@@ -30,7 +30,7 @@ COPY --from=builder /src /root
 RUN rm -f /usr/share/nginx/html/*
 
 # Copy Hugo build output from builder stage
-COPY --from=builder /src/public/* /usr/share/nginx/html/
+COPY --from=builder /src/public/ /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port
