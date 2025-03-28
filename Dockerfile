@@ -30,7 +30,7 @@ RUN apk update && apk upgrade --no-cache \
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy Hugo build output from builder stage
-COPY --from=builder /opt/HugoApp /usr/share/nginx/html
+COPY --from=builder /opt/HugoApp/* /usr/share/nginx/html
 
 # Expose port
 EXPOSE 80
