@@ -1,36 +1,25 @@
-########################################
-# -------- Stage 1: Hugo Build --------
-########################################
-FROM alpine:3.21.3 AS builder
+# Stage 1
+FROM alpine:latest AS build
 
-RUN apk update && apk upgrade && \
-    apk add --no-cache \
-      --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
-      hugo
+# Install the Hugo go app.
+RUN apk add --update hugo
 
-WORKDIR /src
+WORKDIR /opt/HugoApp
+
+# Copy Hugo config into the container Workdir.
 COPY . .
-RUN hugo --environment production --destination /public
 
+# Run Hugo in the Workdir to generate HTML.
+RUN hugo
 
-#############################################
-# -------- Stage 2: LinuxServer NGINX -------
-#############################################
-FROM lscr.io/linuxserver/nginx:1.26.3
+# Stage 2
+FROM nginx:1.25-alpine
 
-# Ensure writable config volume exists and content can be generated
-VOLUME /config
+# Set workdir to the NGINX default dir.
+WORKDIR /usr/share/nginx/html
 
-# Copy static site and nginx config
-COPY --from=builder /public /usr/share/nginx/html/
-COPY nginx.conf /config/nginx/site-confs/default
+# Copy HTML from previous build into the Workdir.
+COPY --from=build /opt/HugoApp/public .
 
-# Adjust permissions for non-root (UID 101 in LinuxServer image)
-RUN chown -R 101:101 /usr/share/nginx/html /config && \
-    chmod -R 755 /usr/share/nginx/html && \
-    chmod -R a-w /usr/share/nginx/html
-
-EXPOSE 80
-
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD wget --spider -q http://localhost || exit 1
+# Expose port 80
+EXPOSE 80/tcp
