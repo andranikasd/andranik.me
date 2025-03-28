@@ -8,11 +8,12 @@ RUN apk add --no-cache \
     --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
     hugo
 
-WORKDIR /opt/HugoApp
+WORKDIR /src
+
 COPY . .
 
 # Build Hugo site
-RUN hugo --environment production
+RUN hugo
 
 ############################################################
 #            Stage 2: Secure and Patched NGINX Runtime     #
@@ -30,7 +31,7 @@ RUN apk update && apk upgrade --no-cache \
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy Hugo build output from builder stage
-COPY --from=builder /opt/HugoApp/* /usr/share/nginx/html
+COPY --from=builder /src/public/ /usr/share/nginx/html
 
 # Expose port
 EXPOSE 80
