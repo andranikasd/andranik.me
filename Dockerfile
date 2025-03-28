@@ -12,7 +12,7 @@ COPY . .
 
 # Build Hugo site
 RUN hugo --destination /src/public
-RUN ls -la
+
 ############################################################
 #            Stage 2: Secure and Patched NGINX Runtime     #
 ############################################################
