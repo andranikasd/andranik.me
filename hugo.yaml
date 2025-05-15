@@ -94,6 +94,8 @@ params:
         - "Kubernetes"
         - "AWS"
         - "Ansible"
+        - "Wordpress"
+        - "Linux"
         - "Terraform"
         - "Prometheus/Grafana"
         - "Helm/Kustomize/ArgoCD"
@@ -182,7 +184,6 @@ params:
         links:
           - icon: fab fa-github
             url: "https://github.com/andranikasd/yuni-net"
-
 
   # Experience Section 💼
   experience:
